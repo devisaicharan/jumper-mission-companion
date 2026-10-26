@@ -1,0 +1,159 @@
+{
+  "passed": true,
+  "environment": "headless Chromium; preview content; 768px viewport height",
+  "tests": [
+    {
+      "width": 1440,
+      "panel": "mission",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "panel": "interact",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "panel": "express",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "panel": "focus",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "panel": "game",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "panel": "evidence",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "panel": "mission",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "panel": "interact",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "panel": "express",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "panel": "focus",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "panel": "game",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "panel": "evidence",
+      "passed": true
+    },
+    {
+      "width": 820,
+      "panel": "mission",
+      "passed": true
+    },
+    {
+      "width": 820,
+      "panel": "interact",
+      "passed": true
+    },
+    {
+      "width": 820,
+      "panel": "express",
+      "passed": true
+    },
+    {
+      "width": 820,
+      "panel": "focus",
+      "passed": true
+    },
+    {
+      "width": 820,
+      "panel": "game",
+      "passed": true
+    },
+    {
+      "width": 820,
+      "panel": "evidence",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "panel": "mission",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "panel": "interact",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "panel": "express",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "panel": "focus",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "panel": "game",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "panel": "evidence",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "panel": "mission",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "panel": "interact",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "panel": "express",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "panel": "focus",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "panel": "game",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "panel": "evidence",
+      "passed": true
+    }
+  ],
+  "keyboardSkipLink": true,
+  "mobileControlsScroll": true,
+  "stickyStopVisible": true
+}

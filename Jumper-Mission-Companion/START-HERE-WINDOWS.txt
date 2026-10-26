@@ -1,0 +1,41 @@
+JUMPER MISSION COMPANION 1.3.0 - START HERE
+
+UPDATING YOUR EXISTING INSTALLATION
+1. Close the old Jumper terminal and dashboard tabs.
+2. Extract this whole ZIP into D:\jumperlab. Choose Replace files.
+   Keep the existing environment, configuration and jumper-upstream folder.
+3. Open Jumper-Mission-Companion and double-click Start-Windows.cmd.
+4. The browser opens at http://127.0.0.1:8765.
+5. Look for v1.3.0 and Browser 3D below the robot.
+
+FIRST INSTALLATION
+Install 64-bit Python 3.12 or 3.13 from python.org if needed.
+Extract the complete ZIP, then run Start-Windows.cmd.
+The first setup needs internet and downloads the official robot project.
+It can take several minutes. Keep the terminal open.
+
+USING THE APP
+Start mission: robot follows the maze; click cells to edit obstacles.
+Expressions: choose a movement.
+Voice: choose English variant, enable microphone, say hi or wave.
+Read Heard and the action result; use Confirm if requested.
+Camera: enable it, hold a V sign until the hold bar completes.
+Fist means Quiet (cancel motion); palm stops while keeping camera ready.
+Focus: enter a task and click 12s demo to start immediately.
+The crab greets you, waits quietly, then celebrates during the break.
+Pause/Resume works for focus and break. End session cancels the timer.
+Crab Says: watch the sequence, then answer after Your turn.
+Stop all / Escape cancels activities. Use one dashboard tab.
+Focus can continue quietly when you leave the page; keep the server open.
+
+IF PERFORMANCE IS STILL LOW
+Select 2D map in Robot view. It still runs real MuJoCo physics.
+After closing the app, run Check-Performance.cmd for a local speed report.
+Send performance-report.json if further diagnosis is needed.
+Startup errors are saved in windows-startup.log.
+
+This is a Python application, not an EXE. Do not launch from the ZIP viewer.
+No videos, competition entries or public uploads are made by this launcher.
+
+HOSTING ON RENDER / OPTIONAL NETLIFY
+Read DEPLOY-RENDER.md in this folder. The Windows launcher stays local.

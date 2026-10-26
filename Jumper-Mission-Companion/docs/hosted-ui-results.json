@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "tests": [
+    "production Gunicorn entrypoint and health endpoint",
+    "native WebGL poses reach hosted dashboard",
+    "two browsers receive distinct HttpOnly sessions and tokens",
+    "hosted notice and disabled Python image fallback",
+    "visitor A wave does not move visitor B robot",
+    "focus task and pause do not leak across visitors",
+    "cross-session token rejected",
+    "foreign Origin rejected",
+    "third visitor gets capacity message without robot allocation",
+    "release clears cookie and ends old API access",
+    "pending polls do not revive released UI",
+    "remaining visitor session survives release",
+    "released capacity accepts fresh isolated visitor"
+  ],
+  "pageErrors": [],
+  "environment": "local Gunicorn on Linux; native MuJoCo; two independent browser contexts; not a live Render deployment"
+}

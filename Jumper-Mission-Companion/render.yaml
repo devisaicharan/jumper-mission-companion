@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: jumper-mission-companion
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: MISSION_BACKEND
+        value: native
+      - key: MAX_SESSIONS
+        value: "1"
+      - key: SESSION_IDLE_SECONDS
+        value: "300"
+      - key: SESSION_MAX_SECONDS
+        value: "7200"

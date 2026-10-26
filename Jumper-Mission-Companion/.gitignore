@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+local-config.json
+.setup-complete
+*.log
+performance-report.json
+node_modules/
+.env
+.env.*
+docs/dashboard*.png
+static/_redirects
+netlify-dist/
+docs/hosted-test.log

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "tests": [
+    "native model frame displayed",
+    "celebration routes to actual dance mode",
+    "Escape cancels native dance",
+    "native mission and live obstacle replan via dashboard"
+  ],
+  "pageErrors": []
+}

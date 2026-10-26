@@ -1,0 +1,19 @@
+{
+  "samples": 100,
+  "ack_ms": {
+    "median": 1.94,
+    "p95": 7.27,
+    "max": 36.66
+  },
+  "simulated_seconds": 5.12,
+  "wall_seconds": 5.24,
+  "fault": null,
+  "artificial_render_delay_ms": 0,
+  "performance": {
+    "view_mode": "Browser 3D",
+    "version": "1.0.0",
+    "control_step_ms": 6.8,
+    "real_time_factor": 0.99
+  },
+  "view": "browser"
+}

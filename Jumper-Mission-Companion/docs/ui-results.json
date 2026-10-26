@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "tests": [
+    "desktop dashboard",
+    "typed voice routing",
+    "Escape cancellation",
+    "focus pause/resume",
+    "memory-game answer",
+    "mission start/stop",
+    "rapid expression stop",
+    "reset followed by command",
+    "local MediaPipe blank-frame inference",
+    "local hand inference in a worker",
+    "late camera response after Stop",
+    "mobile overflow"
+  ],
+  "pageErrors": [],
+  "mediaPipeBlankFrameHands": 0,
+  "handWorkerBlankFramePoints": 0
+}

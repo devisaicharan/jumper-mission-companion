@@ -1,0 +1,21 @@
+{
+  "samples": 100,
+  "ack_ms": {
+    "median": 2.08,
+    "p95": 6.66,
+    "max": 25.71
+  },
+  "simulated_seconds": 5.1,
+  "wall_seconds": 5.196,
+  "fault": null,
+  "artificial_render_delay_ms": 700,
+  "performance": {
+    "view_mode": "Image \u00b7 Balanced",
+    "version": "1.0.0",
+    "control_step_ms": 3.7,
+    "real_time_factor": 0.99,
+    "render_ms": 950.6,
+    "frame_number": 5
+  },
+  "view": "image"
+}

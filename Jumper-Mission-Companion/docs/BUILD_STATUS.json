@@ -1,0 +1,479 @@
+{
+  "project": "Jumper Mission Companion",
+  "version": "1.3.0",
+  "date": "2026-10-25",
+  "features": [
+    "hand gesture control",
+    "voice command interface",
+    "maze navigation and replanning",
+    "expressive motion coordination",
+    "ClawClock focus companion",
+    "Crab Says memory game"
+  ],
+  "status": "Render deployment package prepared; local hosted isolation acceptance passed; actual Docker image and live Render/Netlify acceptance pending",
+  "unit_tests": {
+    "passed": true,
+    "tests": 83,
+    "failures": 0,
+    "errors": 0,
+    "python": "3.12.14",
+    "date": "2026-10-25"
+  },
+  "native_physics": {
+    "environment": "native MuJoCo host; official Jumper model and compiled controller",
+    "hardware_tested": false,
+    "cases": [
+      {
+        "name": "voice-to-physics wave",
+        "passed": true,
+        "peak_tilt_rad": 0.14104814226532927,
+        "peak_torque_nm": 1.3601984845452901
+      },
+      {
+        "name": "voice-to-physics bow",
+        "passed": true,
+        "peak_tilt_rad": 0.15001206557847716,
+        "peak_torque_nm": 1.2242947008137355
+      },
+      {
+        "name": "voice-to-physics paw",
+        "passed": true,
+        "peak_tilt_rad": 0.18642228973271133,
+        "peak_torque_nm": 0.9663499761290838
+      },
+      {
+        "name": "voice-to-physics salute",
+        "passed": true,
+        "peak_tilt_rad": 0.07005538470990041,
+        "peak_torque_nm": 1.232453164053993
+      },
+      {
+        "name": "voice-to-physics celebrate",
+        "passed": true,
+        "peak_tilt_rad": 0.14193754046886334,
+        "peak_torque_nm": 1.7464
+      },
+      {
+        "name": "cancel dance through native controller",
+        "passed": true
+      },
+      {
+        "name": "focus pause/resume and one celebration in physics",
+        "passed": true
+      },
+      {
+        "name": "two memory-game rounds, correct and wrong answers in physics",
+        "passed": true
+      },
+      {
+        "name": "native maze yaw=0.0",
+        "passed": true,
+        "elapsed_sim_seconds": 22.760000000004833,
+        "goal_error_m": 0.08694380172029965,
+        "peak_tilt_rad": 0.0717463413044078,
+        "wall_penetrating_contact_samples": 0,
+        "status": "complete",
+        "fault": null
+      },
+      {
+        "name": "native maze yaw=0.6",
+        "passed": true,
+        "elapsed_sim_seconds": 22.52000000000454,
+        "goal_error_m": 0.08794007398860818,
+        "peak_tilt_rad": 0.05834043995764233,
+        "wall_penetrating_contact_samples": 0,
+        "status": "complete",
+        "fault": null
+      },
+      {
+        "name": "native maze yaw=-0.8",
+        "passed": true,
+        "elapsed_sim_seconds": 22.680000000004735,
+        "goal_error_m": 0.08721734178300258,
+        "peak_tilt_rad": 0.0620581079892789,
+        "wall_penetrating_contact_samples": 0,
+        "status": "complete",
+        "fault": null
+      },
+      {
+        "name": "native dynamic obstacle activation and route replanning",
+        "passed": true,
+        "replans": 1,
+        "inserted_cell": [
+          5,
+          1
+        ],
+        "status": "complete"
+      }
+    ],
+    "controller_reference": {
+      "frames": 24,
+      "inferences": 18,
+      "observation": 0.0,
+      "target": 0.0
+    },
+    "onnx_reference": {
+      "frames": 18,
+      "worst_action_difference": 0.0
+    },
+    "passed": true
+  },
+  "browser": {
+    "passed": true,
+    "tests": [
+      "desktop dashboard",
+      "typed voice routing",
+      "Escape cancellation",
+      "focus pause/resume",
+      "memory-game answer",
+      "mission start/stop",
+      "rapid expression stop",
+      "reset followed by command",
+      "local MediaPipe blank-frame inference",
+      "local hand inference in a worker",
+      "late camera response after Stop",
+      "mobile overflow"
+    ],
+    "pageErrors": [],
+    "mediaPipeBlankFrameHands": 0,
+    "handWorkerBlankFramePoints": 0
+  },
+  "native_browser": {
+    "passed": true,
+    "tests": [
+      "official meshes animated from native poses in browser WebGL",
+      "Python rendering remains idle in default browser view",
+      "follow-camera toggle",
+      "drag orbit and camera reset with no WebGL errors",
+      "live 2D map view",
+      "MJPEG diagnostic fallback",
+      "switch back to browser 3D",
+      "live simulation speed readout",
+      "celebration routes to actual dance mode",
+      "Escape cancels native dance",
+      "native mission and live obstacle replan via dashboard",
+      "graphics context loss falls back to real physics in 2D"
+    ],
+    "pageErrors": []
+  },
+  "source_commit": "b2e58669848a3ba4f209597cd6bebdfe9d0533a4",
+  "live_webcam_verified": false,
+  "live_microphone_verified": false,
+  "windows_execution_verified": false,
+  "physical_hardware_tested": false,
+  "app_export_available": false,
+  "submitted": false,
+  "published": false,
+  "windows_startup_repair": "automatic setup, persistent log, archive source download, portable bundle keys; Windows execution still unverified",
+  "latency": {
+    "samples": 100,
+    "ack_ms": {
+      "median": 1.94,
+      "p95": 7.27,
+      "max": 36.66
+    },
+    "simulated_seconds": 5.12,
+    "wall_seconds": 5.24,
+    "fault": null,
+    "artificial_render_delay_ms": 0,
+    "performance": {
+      "view_mode": "Browser 3D",
+      "version": "1.0.0",
+      "control_step_ms": 6.8,
+      "real_time_factor": 0.99
+    },
+    "view": "browser"
+  },
+  "slow_render_regression": {
+    "samples": 100,
+    "ack_ms": {
+      "median": 2.08,
+      "p95": 6.66,
+      "max": 25.71
+    },
+    "simulated_seconds": 5.1,
+    "wall_seconds": 5.196,
+    "fault": null,
+    "artificial_render_delay_ms": 700,
+    "performance": {
+      "view_mode": "Image \u00b7 Balanced",
+      "version": "1.0.0",
+      "control_step_ms": 3.7,
+      "real_time_factor": 0.99,
+      "render_ms": 950.6,
+      "frame_number": 5
+    },
+    "view": "image"
+  },
+  "performance_changes": [
+    "default browser WebGL from official mesh geometry and measured native poses; Python graphics idle",
+    "interactive orbit/zoom and 2D fallback",
+    "20 ms maximum host physics slice; yields between slices",
+    "separate renderer model and scene for optional image fallback",
+    "wall clocks for timers/watchdog; simulation clocks for motion/navigation",
+    "local hand recognition in classic worker with main-thread compatibility fallback",
+    "motor constants and ONNX input metadata cached",
+    "live version/speed/command/pose status",
+    "old server detection and one-click performance diagnostics",
+    "camera follows the same interpolated pose timeline as crab geometry",
+    "display-aligned 60 FPS target; actual speed device dependent",
+    "static maze walls batched into one draw call; cached vertex array objects",
+    "lower display pixel load and Follow crab toggle"
+  ],
+  "windows_disconnect_repair": {
+    "status": "regression tested with injected Windows ConnectionAbortedError 10053",
+    "windows_execution_verified": false,
+    "tests": [
+      "aborted response headers",
+      "aborted response body",
+      "aborted incoming request",
+      "command acknowledgement disconnect leaves engine healthy"
+    ]
+  },
+  "motion_latency": {
+    "queue_release_sim_ms": 5.0,
+    "mode_entry_sim_ms": 5.0,
+    "policy_ready_sim_ms": 530.0,
+    "note": "Simulation milliseconds; pose handoff preserved. Wall time depends on laptop simulation speed."
+  },
+  "windows_local_inspection": {
+    "performed_on_prior_version": true,
+    "prior_observation": "0.34-0.50x simulation speed; Wave acknowledgement 585 ms; control step 329 ms and renderer 625 ms in diagnostic snapshot",
+    "this_version_tested_on_windows": false,
+    "latest_observation": "User dashboard remained v1.0.0; repeated Hey, hi unmatched and fist Quiet commands; new update must be installed manually."
+  },
+  "input_focus_changes": [
+    "transcript/action receipts and current robot execution status",
+    "multiple speech alternatives; low/missing confidence confirmation",
+    "English locale selection and exact greeting support",
+    "hand overlay, hold progress and short tracking-gap tolerance",
+    "palm stops motion while keeping camera enabled",
+    "task presets, immediate demo, progress, break pause/resume, history and optional chime",
+    "background focus timer retained while robot motion stops"
+  ],
+  "input_focus_browser": {
+    "passed": true,
+    "environment": "generated speech-service events and landmarks routed into native MuJoCo; no real microphone/webcam recording",
+    "tests": [
+      "greeting speech callback executes native wave",
+      "zero-confidence speech requires confirmation before native bow",
+      "unmatched speech explains no action",
+      "V-sign gate executes native wave",
+      "palm stop keeps camera enabled",
+      "one-click focus demo applies task",
+      "focus completion records task and explains break",
+      "break pause preserves time",
+      "resume and skip break do not start another session",
+      "leaving dashboard preserves focus completion without unattended robot reward"
+    ],
+    "pageErrors": []
+  },
+  "native_physics_retained_from": "1.1.0; physics and motion policies unchanged in UI release",
+  "ui_changes": [
+    "forest-green navigation and original inline SVG crab mark",
+    "clearer typography, action hierarchy and card spacing",
+    "active breadcrumb and assistive navigation state",
+    "mission steps and map legend",
+    "numbered voice/gesture sections and feedback colours",
+    "focus preset selection and timer phase colours",
+    "sticky Stop header; robot viewport fits laptop height",
+    "mobile panel navigation and keyboard skip link",
+    "no external fonts, extra animation loops or network requests"
+  ],
+  "responsive_layout": {
+    "passed": true,
+    "environment": "headless Chromium; preview content; 768px viewport height",
+    "tests": [
+      {
+        "width": 1440,
+        "panel": "mission",
+        "passed": true
+      },
+      {
+        "width": 1440,
+        "panel": "interact",
+        "passed": true
+      },
+      {
+        "width": 1440,
+        "panel": "express",
+        "passed": true
+      },
+      {
+        "width": 1440,
+        "panel": "focus",
+        "passed": true
+      },
+      {
+        "width": 1440,
+        "panel": "game",
+        "passed": true
+      },
+      {
+        "width": 1440,
+        "panel": "evidence",
+        "passed": true
+      },
+      {
+        "width": 1024,
+        "panel": "mission",
+        "passed": true
+      },
+      {
+        "width": 1024,
+        "panel": "interact",
+        "passed": true
+      },
+      {
+        "width": 1024,
+        "panel": "express",
+        "passed": true
+      },
+      {
+        "width": 1024,
+        "panel": "focus",
+        "passed": true
+      },
+      {
+        "width": 1024,
+        "panel": "game",
+        "passed": true
+      },
+      {
+        "width": 1024,
+        "panel": "evidence",
+        "passed": true
+      },
+      {
+        "width": 820,
+        "panel": "mission",
+        "passed": true
+      },
+      {
+        "width": 820,
+        "panel": "interact",
+        "passed": true
+      },
+      {
+        "width": 820,
+        "panel": "express",
+        "passed": true
+      },
+      {
+        "width": 820,
+        "panel": "focus",
+        "passed": true
+      },
+      {
+        "width": 820,
+        "panel": "game",
+        "passed": true
+      },
+      {
+        "width": 820,
+        "panel": "evidence",
+        "passed": true
+      },
+      {
+        "width": 390,
+        "panel": "mission",
+        "passed": true
+      },
+      {
+        "width": 390,
+        "panel": "interact",
+        "passed": true
+      },
+      {
+        "width": 390,
+        "panel": "express",
+        "passed": true
+      },
+      {
+        "width": 390,
+        "panel": "focus",
+        "passed": true
+      },
+      {
+        "width": 390,
+        "panel": "game",
+        "passed": true
+      },
+      {
+        "width": 390,
+        "panel": "evidence",
+        "passed": true
+      },
+      {
+        "width": 320,
+        "panel": "mission",
+        "passed": true
+      },
+      {
+        "width": 320,
+        "panel": "interact",
+        "passed": true
+      },
+      {
+        "width": 320,
+        "panel": "express",
+        "passed": true
+      },
+      {
+        "width": 320,
+        "panel": "focus",
+        "passed": true
+      },
+      {
+        "width": 320,
+        "panel": "game",
+        "passed": true
+      },
+      {
+        "width": 320,
+        "panel": "evidence",
+        "passed": true
+      }
+    ],
+    "keyboardSkipLink": true,
+    "mobileControlsScroll": true,
+    "stickyStopVisible": true
+  },
+  "hosted_browser": {
+    "passed": true,
+    "tests": [
+      "production Gunicorn entrypoint and health endpoint",
+      "native WebGL poses reach hosted dashboard",
+      "two browsers receive distinct HttpOnly sessions and tokens",
+      "hosted notice and disabled Python image fallback",
+      "visitor A wave does not move visitor B robot",
+      "focus task and pause do not leak across visitors",
+      "cross-session token rejected",
+      "foreign Origin rejected",
+      "third visitor gets capacity message without robot allocation",
+      "release clears cookie and ends old API access",
+      "pending polls do not revive released UI",
+      "remaining visitor session survives release",
+      "released capacity accepts fresh isolated visitor"
+    ],
+    "pageErrors": [],
+    "environment": "local Gunicorn on Linux; native MuJoCo; two independent browser contexts; not a live Render deployment"
+  },
+  "hosting": {
+    "prepared": true,
+    "render_deployed": false,
+    "netlify_deployed": false,
+    "docker_build_executed": false,
+    "native_preflight_passed": true,
+    "production_entrypoint_tested": "Gunicorn 26.2.0, one worker, four threads, local Linux",
+    "default_max_sessions": 1,
+    "visitor_state": "separate browser cookies, tokens, engines, locks and physics models",
+    "live_free_tier_performance_verified": false,
+    "optional_netlify_build_and_proxy_rule_unit_tested": true,
+    "live_netlify_proxy_verified": false,
+    "default_idle_seconds": 300,
+    "default_max_lifetime_seconds": 7200,
+    "python_image_rendering": "disabled in hosted mode",
+    "source_download": "pinned official commit fetched at image-build time"
+  }
+}

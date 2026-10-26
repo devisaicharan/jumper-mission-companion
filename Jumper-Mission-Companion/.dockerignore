@@ -1,0 +1,15 @@
+.git
+.venv
+.runtime
+__pycache__
+**/__pycache__
+*.zip
+*.log
+local-config.json
+.setup-complete
+performance-report.json
+node_modules
+docs/*.png
+.env
+.env.*
+netlify-dist

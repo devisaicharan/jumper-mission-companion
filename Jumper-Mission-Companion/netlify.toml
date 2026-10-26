@@ -1,0 +1,11 @@
+[build]
+  publish = "netlify-dist"
+  command = "python3 tools/build_netlify.py"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(self), microphone=(self)"

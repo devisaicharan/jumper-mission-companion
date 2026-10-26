@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "tests": [
+    "official meshes animated from native poses in browser WebGL",
+    "Python rendering remains idle in default browser view",
+    "follow-camera toggle",
+    "drag orbit and camera reset with no WebGL errors",
+    "live 2D map view",
+    "MJPEG diagnostic fallback",
+    "switch back to browser 3D",
+    "live simulation speed readout",
+    "celebration routes to actual dance mode",
+    "Escape cancels native dance",
+    "native mission and live obstacle replan via dashboard",
+    "graphics context loss falls back to real physics in 2D"
+  ],
+  "pageErrors": []
+}

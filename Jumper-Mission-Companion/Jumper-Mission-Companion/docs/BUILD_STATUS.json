@@ -1,0 +1,191 @@
+{
+  "project": "Jumper Mission Companion",
+  "version": "0.1.2",
+  "date": "2026-10-24",
+  "features": [
+    "hand gesture control",
+    "voice command interface",
+    "maze navigation and replanning",
+    "expressive motion coordination",
+    "ClawClock focus companion",
+    "Crab Says memory game"
+  ],
+  "status": "implemented and verified in local simulation; laptop device acceptance pending",
+  "unit_tests": {
+    "passed": true,
+    "tests": 41,
+    "failures": 0,
+    "errors": 0,
+    "python": "3.12.14",
+    "date": "2026-10-24"
+  },
+  "native_physics": {
+    "environment": "native MuJoCo host; official Jumper model and compiled controller",
+    "hardware_tested": false,
+    "cases": [
+      {
+        "name": "voice-to-physics wave",
+        "passed": true,
+        "peak_tilt_rad": 0.1409487131250169,
+        "peak_torque_nm": 1.3551389058702534
+      },
+      {
+        "name": "voice-to-physics bow",
+        "passed": true,
+        "peak_tilt_rad": 0.14994005202119476,
+        "peak_torque_nm": 1.2333562761888954
+      },
+      {
+        "name": "voice-to-physics paw",
+        "passed": true,
+        "peak_tilt_rad": 0.1864054820454945,
+        "peak_torque_nm": 0.9672053387103844
+      },
+      {
+        "name": "voice-to-physics salute",
+        "passed": true,
+        "peak_tilt_rad": 0.0696181292796555,
+        "peak_torque_nm": 1.2358869708428322
+      },
+      {
+        "name": "voice-to-physics celebrate",
+        "passed": true,
+        "peak_tilt_rad": 0.14211714432445166,
+        "peak_torque_nm": 1.6506350444044275
+      },
+      {
+        "name": "cancel dance through native controller",
+        "passed": true
+      },
+      {
+        "name": "focus pause/resume and one celebration in physics",
+        "passed": true
+      },
+      {
+        "name": "two memory-game rounds, correct and wrong answers in physics",
+        "passed": true
+      },
+      {
+        "name": "native maze yaw=0.0",
+        "passed": true,
+        "elapsed_sim_seconds": 22.760000000004833,
+        "goal_error_m": 0.08694380172029965,
+        "peak_tilt_rad": 0.0717463413044078,
+        "wall_penetrating_contact_samples": 0,
+        "status": "complete",
+        "fault": null
+      },
+      {
+        "name": "native maze yaw=0.6",
+        "passed": true,
+        "elapsed_sim_seconds": 22.52000000000454,
+        "goal_error_m": 0.08794007398860818,
+        "peak_tilt_rad": 0.05834043995764233,
+        "wall_penetrating_contact_samples": 0,
+        "status": "complete",
+        "fault": null
+      },
+      {
+        "name": "native maze yaw=-0.8",
+        "passed": true,
+        "elapsed_sim_seconds": 22.680000000004735,
+        "goal_error_m": 0.08721734178300258,
+        "peak_tilt_rad": 0.0620581079892789,
+        "wall_penetrating_contact_samples": 0,
+        "status": "complete",
+        "fault": null
+      },
+      {
+        "name": "native dynamic obstacle activation and route replanning",
+        "passed": true,
+        "replans": 1,
+        "inserted_cell": [
+          5,
+          1
+        ],
+        "status": "complete"
+      }
+    ],
+    "controller_reference": {
+      "frames": 24,
+      "inferences": 18,
+      "observation": 0.0,
+      "target": 2.2351741790771484e-08
+    },
+    "onnx_reference": {
+      "frames": 18,
+      "worst_action_difference": 0.0
+    },
+    "passed": true
+  },
+  "browser": {
+    "passed": true,
+    "tests": [
+      "desktop dashboard",
+      "typed voice routing",
+      "Escape cancellation",
+      "focus pause/resume",
+      "memory-game answer",
+      "mission start/stop",
+      "rapid expression stop",
+      "reset followed by command",
+      "local MediaPipe blank-frame inference",
+      "late camera response after Stop",
+      "mobile overflow"
+    ],
+    "pageErrors": [],
+    "mediaPipeBlankFrameHands": 0
+  },
+  "native_browser": {
+    "passed": true,
+    "tests": [
+      "native model frame displayed",
+      "celebration routes to actual dance mode",
+      "Escape cancels native dance",
+      "native mission and live obstacle replan via dashboard"
+    ],
+    "pageErrors": []
+  },
+  "source_commit": "b2e58669848a3ba4f209597cd6bebdfe9d0533a4",
+  "live_webcam_verified": false,
+  "live_microphone_verified": false,
+  "windows_execution_verified": false,
+  "physical_hardware_tested": false,
+  "app_export_available": false,
+  "submitted": false,
+  "published": false,
+  "windows_startup_repair": "automatic setup, persistent log, archive source download, portable bundle keys; Windows execution still unverified",
+  "latency": {
+    "samples": 100,
+    "ack_ms": {
+      "median": 5.0,
+      "p95": 43.87,
+      "max": 172.48
+    },
+    "simulated_seconds": 5.885,
+    "wall_seconds": 5.748,
+    "fault": null,
+    "artificial_render_delay_ms": 0
+  },
+  "slow_render_regression": {
+    "samples": 100,
+    "ack_ms": {
+      "median": 1.71,
+      "p95": 8.4,
+      "max": 13.88
+    },
+    "simulated_seconds": 5.215,
+    "wall_seconds": 5.269,
+    "fault": null,
+    "artificial_render_delay_ms": 700
+  },
+  "performance_changes": [
+    "separate renderer with private scene/data",
+    "640x426 JPEG frames",
+    "100 ms visible state polling",
+    "unchanged log/text updates skipped",
+    "Stop before camera shutdown",
+    "invalidate late camera and speech callbacks",
+    "monotonic snapshot revisions"
+  ]
+}

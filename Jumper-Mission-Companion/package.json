@@ -1,0 +1,12 @@
+{
+  "name": "jumper-mission-companion",
+  "private": true,
+  "version": "1.3.0",
+  "description": "Optional dashboard browser verification only; runtime server is Python",
+  "scripts": {
+    "test:ui": "python tests/run_ui.py"
+  },
+  "devDependencies": {
+    "playwright": "1.51.1"
+  }
+}

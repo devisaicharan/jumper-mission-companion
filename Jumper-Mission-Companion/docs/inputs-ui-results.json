@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "environment": "generated speech-service events and landmarks routed into native MuJoCo; no real microphone/webcam recording",
+  "tests": [
+    "greeting speech callback executes native wave",
+    "zero-confidence speech requires confirmation before native bow",
+    "unmatched speech explains no action",
+    "V-sign gate executes native wave",
+    "palm stop keeps camera enabled",
+    "one-click focus demo applies task",
+    "focus completion records task and explains break",
+    "break pause preserves time",
+    "resume and skip break do not start another session",
+    "leaving dashboard preserves focus completion without unattended robot reward"
+  ],
+  "pageErrors": []
+}

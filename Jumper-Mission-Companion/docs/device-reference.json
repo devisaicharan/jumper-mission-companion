@@ -1,0 +1,16 @@
+{
+  "schema": "mission-device-check/1",
+  "version": "1.0.0",
+  "os": "Linux",
+  "machine": "x86_64",
+  "python": "3.12.14",
+  "physics_step_ms": {
+    "median": 4.05,
+    "p95": 5.89,
+    "maximum": 8.14
+  },
+  "unpaced_physics_speed": 4.76,
+  "fault": null,
+  "rendering": "Browser 3D; Python rendering disabled during measurement",
+  "hardware_robot": false
+}

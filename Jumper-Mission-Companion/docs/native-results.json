@@ -1,0 +1,99 @@
+{
+  "environment": "native MuJoCo host; official Jumper model and compiled controller",
+  "hardware_tested": false,
+  "cases": [
+    {
+      "name": "voice-to-physics wave",
+      "passed": true,
+      "peak_tilt_rad": 0.14104814226532927,
+      "peak_torque_nm": 1.3601984845452901
+    },
+    {
+      "name": "voice-to-physics bow",
+      "passed": true,
+      "peak_tilt_rad": 0.15001206557847716,
+      "peak_torque_nm": 1.2242947008137355
+    },
+    {
+      "name": "voice-to-physics paw",
+      "passed": true,
+      "peak_tilt_rad": 0.18642228973271133,
+      "peak_torque_nm": 0.9663499761290838
+    },
+    {
+      "name": "voice-to-physics salute",
+      "passed": true,
+      "peak_tilt_rad": 0.07005538470990041,
+      "peak_torque_nm": 1.232453164053993
+    },
+    {
+      "name": "voice-to-physics celebrate",
+      "passed": true,
+      "peak_tilt_rad": 0.14193754046886334,
+      "peak_torque_nm": 1.7464
+    },
+    {
+      "name": "cancel dance through native controller",
+      "passed": true
+    },
+    {
+      "name": "focus pause/resume and one celebration in physics",
+      "passed": true
+    },
+    {
+      "name": "two memory-game rounds, correct and wrong answers in physics",
+      "passed": true
+    },
+    {
+      "name": "native maze yaw=0.0",
+      "passed": true,
+      "elapsed_sim_seconds": 22.760000000004833,
+      "goal_error_m": 0.08694380172029965,
+      "peak_tilt_rad": 0.0717463413044078,
+      "wall_penetrating_contact_samples": 0,
+      "status": "complete",
+      "fault": null
+    },
+    {
+      "name": "native maze yaw=0.6",
+      "passed": true,
+      "elapsed_sim_seconds": 22.52000000000454,
+      "goal_error_m": 0.08794007398860818,
+      "peak_tilt_rad": 0.05834043995764233,
+      "wall_penetrating_contact_samples": 0,
+      "status": "complete",
+      "fault": null
+    },
+    {
+      "name": "native maze yaw=-0.8",
+      "passed": true,
+      "elapsed_sim_seconds": 22.680000000004735,
+      "goal_error_m": 0.08721734178300258,
+      "peak_tilt_rad": 0.0620581079892789,
+      "wall_penetrating_contact_samples": 0,
+      "status": "complete",
+      "fault": null
+    },
+    {
+      "name": "native dynamic obstacle activation and route replanning",
+      "passed": true,
+      "replans": 1,
+      "inserted_cell": [
+        5,
+        1
+      ],
+      "status": "complete"
+    }
+  ],
+  "controller_reference": {
+    "frames": 24,
+    "inferences": 18,
+    "observation": 0.0,
+    "target": 0.0
+  },
+  "onnx_reference": {
+    "frames": 18,
+    "worst_action_difference": 0.0
+  },
+  "passed": true
+}

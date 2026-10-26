@@ -1,0 +1,6 @@
+{
+  "queue_release_sim_ms": 5.0,
+  "mode_entry_sim_ms": 5.0,
+  "policy_ready_sim_ms": 530.0,
+  "note": "Simulation milliseconds; pose handoff preserved. Wall time depends on laptop simulation speed."
+}

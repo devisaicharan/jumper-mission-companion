@@ -279,7 +279,10 @@ $('#view-choice').addEventListener('change',()=>selectView($('#view-choice').val
 $('#reset-camera').addEventListener('click',()=>nativeView?.resetCamera());
 $('#follow-crab').addEventListener('change',()=>nativeView?.setFollow($('#follow-crab').checked));
 try{
-  const response=await fetch('/api/config');const received=await response.json();
+  const response=await fetch('/api/config');
+  let received;
+  try{received=await response.json();}
+  catch{throw Error(response.ok?'The server returned an incomplete response. Reload to reconnect.':`The robot server is unavailable (HTTP ${response.status}). It may be restarting. Please try again shortly.`);}
   if(!response.ok)throw Error(received.error||'The simulation could not start.');
   config=received;
   if(config.hosted){
@@ -294,7 +297,10 @@ try{
   if(native){$('#view-settings').hidden=false;text('#build-version',`v${config.version||'unknown'}`);$('#view-choice option[value="image"]').disabled=!config.image_available;await selectView(config.view||'browser',false);}
   await command('heartbeat');poll();
   setInterval(()=>{if(config&&!document.hidden)command('heartbeat').catch(()=>{});},700);
-}catch(e){notice(`Startup failed: ${e.message}`);}
+}catch(e){
+  online=false;text('#connection','Connection failed');$('.connection').dataset.state='offline';
+  notice(`Startup failed: ${e.message}`);
+}
 
 $('#release-session').addEventListener('click',async()=>{
   if(!config?.hosted)return;

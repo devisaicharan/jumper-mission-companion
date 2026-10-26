@@ -7,7 +7,8 @@ from mission.native import NativeJumper
 from mission.navigation import Maze
 
 if __name__=='__main__':
-    robot=NativeJumper(os.environ.get('UPSTREAM_DIR',str(Path(__file__).resolve().parents[2]/'jumper-upstream')),Maze().obstacles(mutable=True))
+    robot=NativeJumper(os.environ.get('UPSTREAM_DIR',str(Path(__file__).resolve().parents[2]/'jumper-upstream')),Maze().obstacles(mutable=True),
+                       build_model_cache='--build-model-cache' in sys.argv)
     try:
         robot.step(.02)
         assert robot.state()['backend']=='mujoco-official-jumper'

@@ -12,6 +12,7 @@ import importlib.util
 import importlib.machinery
 import json
 import math
+import os
 import sysconfig
 import xml.etree.ElementTree as ET
 
@@ -21,8 +22,29 @@ def bundle_file_key(bundle,path):
     return path.relative_to(bundle).as_posix()
 
 
+def load_model(mujoco, xml, cache_dir=None, build_cache=False):
+    """Compile in the image build; avoid the STL compiler's runtime memory spike.
+
+    MJB files depend on MuJoCo's version and the complete scene, including its
+    obstacle layout. A configured cache must contain that exact model; silently
+    recompiling on a small host would kill the worker again.
+    """
+    if not cache_dir:
+        return mujoco.MjModel.from_xml_string(xml)
+    key = hashlib.sha256((mujoco.__version__+'\n'+xml).encode()).hexdigest()
+    path = Path(cache_dir) / (key+'.mjb')
+    if build_cache:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        model = mujoco.MjModel.from_xml_string(xml)
+        mujoco.mj_saveModel(model, str(path))
+        return model
+    if not path.is_file():
+        raise RuntimeError('Compiled native model is missing. Rebuild the Docker image.')
+    return mujoco.MjModel.from_binary_path(str(path))
+
+
 class NativeJumper:
-    def __init__(self, upstream, obstacles=()):
+    def __init__(self, upstream, obstacles=(), *, build_model_cache=False):
         import mujoco
         import numpy as np
         import onnxruntime as ort
@@ -113,7 +135,8 @@ class NativeJumper:
                           conaffinity='1' if enabled else '0',friction='1 0.01 0.01')
         # Preserve the shipped XML's collision settings. Visual-only meshes
         # retain zero contact masks; this independent host is not mjlab.
-        self.model = mujoco.MjModel.from_xml_string(ET.tostring(xml,encoding='unicode'))
+        self.model = load_model(mujoco, ET.tostring(xml,encoding='unicode'),
+                                os.environ.get('NATIVE_MODEL_CACHE'), build_model_cache)
         self.data = mujoco.MjData(self.model)
         self.obstacle_geoms={cell:mujoco.mj_name2id(self.model,mujoco.mjtObj.mjOBJ_GEOM,name)
                              for cell,name in slots.items()}

@@ -13,3 +13,6 @@ docs/*.png
 .env
 .env.*
 netlify-dist
+
+/Jumper-Mission-Companion/
+/jumper-upstream/
